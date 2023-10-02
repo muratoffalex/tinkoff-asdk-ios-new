@@ -47,30 +47,30 @@ final class MainFormTableContentProvider: IMainFormTableContentProvider {
             cell.containedView.presenter = presenter
             cell.insets = insets(for: cellType)
             return cell
-        case let .getReceiptSwitch(presenter):
-            let cell = tableView.dequeue(cellType: SwitchTableCell.self, indexPath: indexPath)
-            cell.containedView.presenter = presenter
-            cell.insets = insets(for: cellType)
-            return cell
-        case let .email(presenter):
-            let cell = tableView.dequeue(cellType: EmailTableCell.self, indexPath: indexPath)
-            cell.containedView.presenter = presenter
-            cell.insets = insets(for: cellType)
-            return cell
+//        case let .getReceiptSwitch(presenter):
+//            let cell = tableView.dequeue(cellType: SwitchTableCell.self, indexPath: indexPath)
+//            cell.containedView.presenter = presenter
+//            cell.insets = insets(for: cellType)
+//            return cell
+//        case let .email(presenter):
+//            let cell = tableView.dequeue(cellType: EmailTableCell.self, indexPath: indexPath)
+//            cell.containedView.presenter = presenter
+//            cell.insets = insets(for: cellType)
+//            return cell
         case let .payButton(presenter):
             let cell = tableView.dequeue(cellType: PayButtonTableCell.self, indexPath: indexPath)
             cell.containedView.presenter = presenter
             cell.insets = insets(for: cellType)
             return cell
-        case let .otherPaymentMethodsHeader(presenter):
-            let cell = tableView.dequeue(cellType: TextAndImageHeaderTableCell.self, indexPath: indexPath)
-            cell.containedView.presenter = presenter
-            cell.insets = insets(for: cellType)
-            return cell
-        case let .otherPaymentMethod(paymentMethod):
-            let cell = tableView.dequeue(cellType: AvatarTableViewCell.self, indexPath: indexPath)
-            cell.update(with: .viewModel(from: paymentMethod))
-            return cell
+//        case let .otherPaymentMethodsHeader(presenter):
+//            let cell = tableView.dequeue(cellType: TextAndImageHeaderTableCell.self, indexPath: indexPath)
+//            cell.containedView.presenter = presenter
+//            cell.insets = insets(for: cellType)
+//            return cell
+//        case let .otherPaymentMethod(paymentMethod):
+//            let cell = tableView.dequeue(cellType: AvatarTableViewCell.self, indexPath: indexPath)
+//            cell.update(with: .viewModel(from: paymentMethod))
+//            return cell
         }
     }
 
