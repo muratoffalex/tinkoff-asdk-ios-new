@@ -62,6 +62,8 @@ final class MainFormTableContentProvider: IMainFormTableContentProvider {
             cell.containedView.presenter = presenter
             cell.insets = insets(for: cellType)
             return cell
+        default:
+            return UITableViewCell()
 //        case let .otherPaymentMethodsHeader(presenter):
 //            let cell = tableView.dequeue(cellType: TextAndImageHeaderTableCell.self, indexPath: indexPath)
 //            cell.containedView.presenter = presenter

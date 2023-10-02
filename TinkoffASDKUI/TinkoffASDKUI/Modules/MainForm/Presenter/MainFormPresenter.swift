@@ -472,7 +472,7 @@ extension MainFormPresenter {
     private func reloadContent() {
         payButtonPresenter.presentationState = .presentationState(from: dataState.primaryPaymentMethod)
         activatePayButtonIfNeeded()
-        cellTypes = primaryPaymentMethodRows() + otherPaymentMethodsRows()
+        cellTypes = primaryPaymentMethodRows()
         view?.reloadData()
     }
 
@@ -482,11 +482,11 @@ extension MainFormPresenter {
         switch dataState.primaryPaymentMethod {
         case .card where savedCardPresenter.presentationState.isSelected:
             rows.append(.savedCard(savedCardPresenter))
-            rows.append(.getReceiptSwitch(getReceiptSwitchPresenter))
-
-            if getReceiptSwitchPresenter.isOn {
-                rows.append(.email(emailPresenter))
-            }
+//            rows.append(.getReceiptSwitch(getReceiptSwitchPresenter))
+//
+//            if getReceiptSwitchPresenter.isOn {
+//                rows.append(.email(emailPresenter))
+//            }
         case .card, .tinkoffPay, .sbp:
             break
         }
